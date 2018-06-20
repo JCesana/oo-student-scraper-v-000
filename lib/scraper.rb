@@ -37,11 +37,11 @@ class Scraper
     
     student_data.css("a").each do |profile|
 
-      if student.attribute("href").value.include?("twitter")
+      if profile.attribute("href").value.include?("twitter")
         student[:twitter] = profile.attribute("href").value 
-      elsif student.attribute("href").value.include?("linkedin")
+      elsif profile.attribute("href").value.include?("linkedin")
         student[:linkedin] = profile.attribute("href").value
-      elsif student.attribute("href").value.include?("github")
+      elsif profile.attribute("href").value.include?("github")
         student[:github] = profile.attribute("href").value 
       else
         student[:blog] = profile.attribute("href").value 
