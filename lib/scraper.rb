@@ -31,13 +31,6 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
     student = {}
-    twitter = nil 
-    linkedin = nil 
-    github = nil 
-    blog = nil 
-    profile_quote = nil 
-    bio = nil 
-    
     student_data = doc.css("div.social-icon-container")
     student_quote = doc.css("div.profile-quote")
     student_bio_data = doc.css("div.details-container div.description-holder p")
@@ -45,28 +38,19 @@ class Scraper
     student_data.css("a").each do |student|
 
       if student.attribute("href").value.include?("twitter")
-        twitter = student.attribute("href").value 
+        student[:twitter] = student.attribute("href").value 
       elsif student.attribute("href").value.include?("linkedin")
-        linkedin = student.attribute("href").value
+        student[:linkedin] = student.attribute("href").value
       elsif student.attribute("href").value.include?("github")
-        github = student.attribute("href").value 
+        student[:github] = student.attribute("href").value 
       else
-        blog = student.attribute("href").value 
+        student[:blog] = student.attribute("href").value 
       end 
 
     end 
     
-    profile_quote = student_quote.text if student_quote.text
-    bio = student_bio_data.text if student_bio_data.text
-    
-    
-    
-    student[:twitter] = twitter if twitter
-    student[:linkedin] = linkedin if linkedin 
-    student[:github] = github if github 
-    student[:blog] = blog if blog 
-    student[:profile_quote] = profile_quote if profile_quote 
-    student[:bio] = bio if bio 
+    student[:profile_quote] = student_quote.text if student_quote.text
+    student[:bio] = student_bio_data.text if student_bio_data.text
     
     student 
   end
