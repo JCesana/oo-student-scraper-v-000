@@ -2,13 +2,6 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-# DATA:
-
-# List: doc.css("div.roster-cards-container")
-# Name: doc.css("div.roster-cards-container div.student-card").first.css("h4").text 
-# Location: doc.css("div.roster-cards-container div.student-card").first.css("p").text
-# Profile URL: doc.css("div.roster-cards-container div.student-card").first.css("a").attribute("href").value
-
 class Scraper
 
   def self.scrape_index_page(index_url)
