@@ -17,12 +17,16 @@ class Student
   end
 
   def add_student_attributes(attributes_hash)
+    student = self 
+    
     attributes_hash.each_pair do |key, value|
       self[key] = value 
     end 
+    binding.pry 
   end
 
   def self.all
     @@all 
   end
 end
+
