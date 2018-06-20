@@ -36,7 +36,6 @@ class Scraper
     student_bio_data = doc.css("div.details-container div.description-holder p")
     
     student_data.css("a").each do |profile|
-
       if profile.attribute("href").value.include?("twitter")
         student[:twitter] = profile.attribute("href").value 
       elsif profile.attribute("href").value.include?("linkedin")
@@ -46,7 +45,6 @@ class Scraper
       else
         student[:blog] = profile.attribute("href").value 
       end 
-
     end 
     
     student[:profile_quote] = student_quote.text if student_quote.text
