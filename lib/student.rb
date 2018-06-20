@@ -20,7 +20,7 @@ class Student
     student = self 
     binding.pry 
     attributes_hash.each_pair do |key, value|
-      student[key.to_sym] = value  
+      student.key = value  
     end 
     binding.pry 
   end
