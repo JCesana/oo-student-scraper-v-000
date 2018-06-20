@@ -24,6 +24,4 @@ class Student
     @@all 
   end
 end
-
-test = Student.new({:name=>"Alex Patriquin", :location=>"New York, NY"})
-binding.pry 
+ 
