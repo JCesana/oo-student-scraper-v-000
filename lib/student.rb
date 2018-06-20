@@ -7,7 +7,7 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    
+    puts student_hash
     @@all << self 
   end
 
