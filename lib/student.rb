@@ -20,8 +20,7 @@ class Student
     student = self 
     
     attributes_hash.each_pair do |key, value|
-      puts "key: #{key}" 
-      puts "value: #{value}"
+      student.key = value  
     end 
     binding.pry 
   end
