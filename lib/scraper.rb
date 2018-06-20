@@ -49,7 +49,6 @@ class Scraper
     
     student[:profile_quote] = student_quote.text if student_quote.text
     student[:bio] = student_bio_data.text if student_bio_data.text
-    
     student 
   end
 
