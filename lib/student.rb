@@ -30,3 +30,5 @@ class Student
   end
 end
 
+student.add_student_attributes(student_hash) 
+
