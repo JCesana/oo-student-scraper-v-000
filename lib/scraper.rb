@@ -35,16 +35,16 @@ class Scraper
     student_quote = doc.css("div.profile-quote")
     student_bio_data = doc.css("div.details-container div.description-holder p")
     
-    student_data.css("a").each do |student|
+    student_data.css("a").each do |profile|
 
       if student.attribute("href").value.include?("twitter")
-        student[:twitter] = student.attribute("href").value 
+        student[:twitter] = profile.attribute("href").value 
       elsif student.attribute("href").value.include?("linkedin")
-        student[:linkedin] = student.attribute("href").value
+        student[:linkedin] = profile.attribute("href").value
       elsif student.attribute("href").value.include?("github")
-        student[:github] = student.attribute("href").value 
+        student[:github] = profile.attribute("href").value 
       else
-        student[:blog] = student.attribute("href").value 
+        student[:blog] = profile.attribute("href").value 
       end 
 
     end 
