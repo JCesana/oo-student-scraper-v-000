@@ -7,8 +7,8 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    puts student_hash
-    puts student_hash[:name]
+    @name = student_hash[:name]
+    @location = student_hash[:location]
     @@all << self 
   end
 
