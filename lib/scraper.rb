@@ -30,6 +30,7 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
+    student = {}
     twitter = nil 
     linkedin = nil 
     github = nil 
@@ -58,7 +59,7 @@ class Scraper
     profile_quote = student_quote.text if student_quote.text
     bio = student_bio_data.text if student_bio_data.text
     
-    student = {}
+    
     
     student[:twitter] = twitter if twitter
     student[:linkedin] = linkedin if linkedin 
