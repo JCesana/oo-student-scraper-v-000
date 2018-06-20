@@ -17,7 +17,7 @@ class Student
   end
 
   def add_student_attributes(attributes_hash)
-    student = self 
+    student = Hash.new  
     binding.pry 
     attributes_hash.each_pair do |key, value|
       student.key = value  
