@@ -18,7 +18,7 @@ class Student
 
   def add_student_attributes(attributes_hash)
     student = self 
-    
+    binding.pry 
     attributes_hash.each_pair do |key, value|
       student[key.to_sym] = value  
     end 
