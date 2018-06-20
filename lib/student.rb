@@ -30,6 +30,8 @@ class Student
   end
 end
 
+student = Student.new({:name=>"Alex Patriquin", :location=>"New York, NY"})
+
 student_hash = {:twitter=>"someone@twitter.com",
  :linkedin=>"someone@linkedin.com",
  :github=>"someone@github.com",
