@@ -8,7 +8,7 @@ class Student
 
   def initialize(student_hash)
     puts student_hash
-    puts student_hash["name"]
+    puts student_hash[:name]
     @@all << self 
   end
 
